@@ -4,19 +4,13 @@
 from __future__ import annotations
 
 import json
-from collections import Counter, defaultdict
+from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPERS_PATH = ROOT / "data" / "papers.json"
 README_PATH = ROOT / "README.md"
-
-STATUS_MARKS = {
-    "tracked": "Tracked",
-    "candidate": "Candidate",
-}
-
 
 def stars(value: int) -> str:
     return "★" * value + "☆" * (5 - value)
@@ -31,12 +25,11 @@ def paper_link(item: dict) -> str:
 
 
 def table_row(item: dict) -> str:
-    status = STATUS_MARKS.get(item["status"], item["status"])
     tags = ", ".join(f"`{tag}`" for tag in item["topic_tags"][:4])
     return (
         f"| {paper_link(item)} | {item['venue']} {item['year']} | "
         f"{item['paper_type']} | {stars(item['web_agent_relevance'])} | "
-        f"{item['category']} | {tags} | {status} |"
+        f"{item['category']} | {tags} |"
     )
 
 
@@ -56,11 +49,8 @@ def grouped_by_category(papers: list[dict]) -> str:
 
 
 def stats_line(papers: list[dict]) -> str:
-    counts = Counter(item["status"] for item in papers)
     latest_year = max((item["year"] for item in papers), default="N/A")
-    tracked = counts.get("tracked", 0)
-    candidates = counts.get("candidate", 0)
-    return f"Corpus size: **{len(papers)} papers** · **{tracked} tracked** · **{candidates} candidates** · latest year: **{latest_year}**."
+    return f"Corpus size: **{len(papers)} papers** · latest year: **{latest_year}**."
 
 
 def render(data: dict) -> str:
@@ -79,8 +69,8 @@ def render(data: dict) -> str:
         "",
         "## Papers",
         "",
-        "| Paper | Venue | Type | Web Agent Relevance | Category | Tags | Status |",
-        "|---|---|---|---:|---|---|---|",
+        "| Paper | Venue | Type | Web Agent Relevance | Category | Tags |",
+        "|---|---|---|---:|---|---|",
     ]
     lines.extend(table_row(item) for item in papers)
 
