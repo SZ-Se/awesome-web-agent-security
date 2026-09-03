@@ -15,8 +15,13 @@ The current implementation uses only Python's standard library and queries:
 
 - arXiv API for recent preprints
 - Crossref Works API for proceedings and journal metadata
+- DBLP publication search API for computer science bibliographic metadata
+- OpenAlex Works API for broad scholarly metadata
+- Semantic Scholar Graph API for paper search and abstracts
 
 The discovery configuration is in `data/discovery_config.json`. It contains search queries, venue aliases, positive keywords, negative keywords, target arXiv categories, and the minimum discovery score.
+
+OpenAlex and Semantic Scholar can be used without local secrets. For heavier use, set `OPENALEX_MAILTO` and `SEMANTIC_SCHOLAR_API_KEY` as GitHub Actions secrets, or set `openalex_mailto` / `semantic_scholar_api_key` in `data/discovery_config.json`.
 
 The venue aliases include the four major security conferences:
 

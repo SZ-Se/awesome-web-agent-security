@@ -4,6 +4,11 @@
   "min_score": 7,
   "arxiv_request_delay_seconds": 10,
   "crossref_request_delay_seconds": 1,
+  "dblp_request_delay_seconds": 1,
+  "openalex_request_delay_seconds": 1,
+  "semantic_scholar_request_delay_seconds": 1,
+  "openalex_mailto": "",
+  "semantic_scholar_api_key": "",
   "arxiv_categories": ["cs.CR", "cs.AI", "cs.CL", "cs.HC", "cs.LG"],
   "positive_keywords": [
     "web agent",
@@ -116,6 +121,20 @@
     {"source": "crossref", "query": "computer using agents security safety"},
     {"source": "crossref", "query": "web agents deceptive interfaces safety"},
     {"source": "crossref", "query": "LLM agent data exfiltration tool use"},
-    {"source": "crossref", "query": "agentic red teaming web agents"}
+    {"source": "crossref", "query": "agentic red teaming web agents"},
+    {"source": "dblp", "query": "web agent security prompt injection"},
+    {"source": "dblp", "query": "browser agent security"},
+    {"source": "dblp", "query": "indirect prompt injection agent"},
+    {"source": "dblp", "query": "tool selection prompt injection"},
+    {"source": "openalex", "query": "web agent security prompt injection"},
+    {"source": "openalex", "query": "browser agent security"},
+    {"source": "openalex", "query": "indirect prompt injection agent"},
+    {"source": "openalex", "query": "computer using agent safety"},
+    {"source": "openalex", "query": "tool selection prompt injection agent"},
+    {"source": "semantic_scholar", "query": "web agent security prompt injection"},
+    {"source": "semantic_scholar", "query": "browser agent security"},
+    {"source": "semantic_scholar", "query": "indirect prompt injection agent"},
+    {"source": "semantic_scholar", "query": "computer using agent safety"},
+    {"source": "semantic_scholar", "query": "tool selection prompt injection agent"}
   ]
 }
