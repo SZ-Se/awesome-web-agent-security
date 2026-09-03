@@ -98,6 +98,10 @@ def render(data: dict) -> str:
             "3. Run `python3 scripts/generate_readme.py`.",
             "4. Commit the data and generated README.",
             "",
+            "## Weekly Discovery",
+            "",
+            "Weekly discovery is configured in `data/discovery_config.json` and implemented by `scripts/discover_papers.py`. The bot writes candidate papers to `data/candidates/` for human review; it does not edit `data/papers.json` directly.",
+            "",
             "See `docs/STRUCTURE.md` and `docs/TAXONOMY.md` for the repository design.",
             "",
         ]

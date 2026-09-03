@@ -1,0 +1,63 @@
+name: Weekly Paper Discovery
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Discover candidate papers
+        run: python3 scripts/discover_papers.py --output data/candidates/latest.json
+
+      - name: Check candidate count
+        id: candidates
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          data = json.loads(Path("data/candidates/latest.json").read_text())
+          print(f"count={len(data.get('candidates', []))}")
+          PY
+
+      - name: Stop when no candidates are found
+        if: steps.candidates.outputs.count == '0'
+        run: echo "No new candidate papers found."
+
+      - name: Create discovery pull request
+        if: steps.candidates.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COUNT: ${{ steps.candidates.outputs.count }}
+        run: |
+          set -euo pipefail
+          branch="paper-discovery/$(date -u +%Y-%m-%d)-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add data/candidates/latest.json
+          if git diff --cached --quiet; then
+            echo "Candidate file did not change."
+            exit 0
+          fi
+          git commit -m "Add weekly paper discovery candidates"
+          git push --set-upstream origin "$branch"
+          gh pr create \
+            --title "Weekly paper discovery candidates ($(date -u +%Y-%m-%d))" \
+            --body "This PR contains $COUNT automatically discovered candidate papers for human review. It does not update data/papers.json. Review data/candidates/latest.json, set accepted candidates to decision=accept, then run scripts/promote_candidates.py." \
+            --base main \
+            --head "$branch"
