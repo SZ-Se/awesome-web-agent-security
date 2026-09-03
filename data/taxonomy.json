@@ -1,0 +1,39 @@
+{
+  "categories": [
+    {
+      "name": "Observation / Environment Attacks",
+      "description": "Attacks embedded in web pages, visual observations, DOM/HTML content, or deceptive interface structures.",
+      "examples": ["HTML/Text Injection", "Visual Injection", "Deceptive Interfaces"]
+    },
+    {
+      "name": "Context / Data Attacks",
+      "description": "Attacks delivered through retrieved content, multi-source observations, emails, tool outputs, or other untrusted context.",
+      "examples": ["Indirect Prompt Injection", "Multi-source Injection", "Retrieval Reachability"]
+    },
+    {
+      "name": "Tool / Action Attacks",
+      "description": "Attacks against tool descriptions, tool retrieval, action selection, or the invocation pipeline.",
+      "examples": ["ToolHijacker", "Malicious Tool Selection"]
+    },
+    {
+      "name": "Resource / Availability Attacks",
+      "description": "Attacks that increase computational cost, delay completion, or exhaust budget and runtime resources.",
+      "examples": ["Computational Cost Attack", "Long-Reasoning Bomb"]
+    },
+    {
+      "name": "Privacy / Side Channels",
+      "description": "Leakage through prompts, browsing patterns, traffic metadata, domains, timing, or local agent behavior.",
+      "examples": ["Network-Level Leakage", "Trait Inference"]
+    },
+    {
+      "name": "Defenses",
+      "description": "Runtime, causal, alignment, masking, sandboxing, or policy mechanisms for reducing agent compromise.",
+      "examples": ["Task Alignment", "Masked Re-execution", "Causal Attribution"]
+    },
+    {
+      "name": "Security Evaluation",
+      "description": "Benchmarks, environments, metrics, and evaluation protocols for Web Agent Security.",
+      "examples": ["AgentDojo", "SecureWebArena", "Adversarial Trajectories"]
+    }
+  ]
+}
