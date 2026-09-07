@@ -2,7 +2,7 @@
 
 A curated and dynamically generated paper repository for Web Agent Security, covering prompt injection, tool security, deceptive interfaces, privacy, availability, benchmarks, and defenses.
 
-> Generated from `data/papers.json` on 2026-09-03. Last corpus review: 2026-09-03.
+> Generated from `data/papers.json`. Last corpus review: 2026-09-03.
 
 Corpus size: **19 papers** · latest year: **2026**.
 

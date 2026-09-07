@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import json
 from collections import defaultdict
-from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,14 +55,13 @@ def stats_line(papers: list[dict]) -> str:
 def render(data: dict) -> str:
     project = data["project"]
     papers = sorted(data["papers"], key=lambda x: (x["year"], x["venue"], x["title"]))
-    generated = date.today().isoformat()
 
     lines = [
         f"# {project['title']}",
         "",
         project["description"],
         "",
-        f"> Generated from `data/papers.json` on {generated}. Last corpus review: {project['last_reviewed']}.",
+        f"> Generated from `data/papers.json`. Last corpus review: {project['last_reviewed']}.",
         "",
         stats_line(papers),
         "",
