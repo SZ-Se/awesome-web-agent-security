@@ -41,7 +41,7 @@ jobs:
         if: steps.candidates.outputs.count == '0'
         run: echo "No new candidate papers found."
 
-      - name: Create discovery pull request
+      - name: Publish discovery branch
         if: steps.candidates.outputs.count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -59,8 +59,26 @@ jobs:
           fi
           git commit -m "Add weekly paper discovery candidates"
           git push --set-upstream origin "$branch"
-          gh pr create \
+          body="This PR contains $COUNT automatically discovered candidate papers for human review. It does not update data/papers.json. Review data/candidates/latest.json, set accepted candidates to decision=accept, then run scripts/promote_candidates.py."
+
+          if gh pr create \
             --title "Weekly paper discovery candidates ($(date -u +%Y-%m-%d))" \
-            --body "This PR contains $COUNT automatically discovered candidate papers for human review. It does not update data/papers.json. Review data/candidates/latest.json, set accepted candidates to decision=accept, then run scripts/promote_candidates.py." \
+            --body "$body" \
             --base main \
-            --head "$branch"
+            --head "$branch"; then
+            echo "Created discovery pull request."
+          else
+            compare_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/main...${branch}?expand=1"
+            {
+              echo "## Weekly paper discovery candidates"
+              echo
+              echo "GitHub Actions could not create a pull request with the repository token."
+              echo
+              echo "- Candidate branch: \`$branch\`"
+              echo "- Candidate count: \`$COUNT\`"
+              echo "- Create PR manually: $compare_url"
+              echo
+              echo "This usually means the repository or organization setting does not allow GitHub Actions to create pull requests."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "PR creation is not permitted. Candidate branch was pushed: $branch"
+          fi

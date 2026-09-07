@@ -81,3 +81,9 @@ python3 scripts/generate_readme.py
 ## GitHub Actions
 
 `.github/workflows/weekly-discovery.yml` runs every Monday at 02:00 UTC. If candidates are found, it opens a pull request containing `data/candidates/latest.json` for manual review.
+
+If repository or organization settings do not allow GitHub Actions to create pull requests, the workflow still pushes a `paper-discovery/...` branch and writes a manual PR link to the job summary. To enable automatic PR creation, check:
+
+- Repository Settings -> Actions -> General -> Workflow permissions
+- Enable read and write permissions for workflows
+- Enable allowing GitHub Actions to create and approve pull requests, if your organization permits it
