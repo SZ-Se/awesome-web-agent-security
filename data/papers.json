@@ -3,9 +3,27 @@
     "name": "awesome-web-agent-security",
     "title": "Awesome Web Agent Security",
     "description": "A curated and dynamically generated paper repository for Web Agent Security, covering prompt injection, tool security, deceptive interfaces, privacy, availability, benchmarks, and defenses.",
-    "last_reviewed": "2026-09-03"
+    "last_reviewed": "2026-09-16"
   },
   "papers": [
+    {
+      "id": "injecagent-2024",
+      "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+      "venue": "ACL Findings",
+      "year": 2024,
+      "paper_type": "Benchmark",
+      "category": "Context / Data Attacks",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "https://aclanthology.org/2024.findings-acl.624/",
+      "topic_tags": [
+        "indirect prompt injection",
+        "tool-integrated agents",
+        "benchmark",
+        "data exfiltration"
+      ],
+      "summary": "A major benchmark for indirect prompt injection in tool-integrated agents, including direct harm and private-data exfiltration."
+    },
     {
       "id": "agentdojo-2024",
       "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
@@ -16,7 +34,12 @@
       "web_agent_relevance": 4,
       "status": "tracked",
       "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/97091a5177d8dc64b1da8bf3e1f6fb54-Abstract-Datasets_and_Benchmarks_Track.html",
-      "topic_tags": ["agent security", "benchmark", "indirect prompt injection", "tool execution"],
+      "topic_tags": [
+        "agent security",
+        "benchmark",
+        "indirect prompt injection",
+        "tool execution"
+      ],
       "summary": "A foundational benchmark for agent security with tool execution, untrusted external data, and indirect prompt injection test cases."
     },
     {
@@ -29,34 +52,13 @@
       "web_agent_relevance": 3,
       "status": "tracked",
       "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei",
-      "topic_tags": ["prompt injection", "formalization", "benchmark", "defense"],
+      "topic_tags": [
+        "prompt injection",
+        "formalization",
+        "benchmark",
+        "defense"
+      ],
       "summary": "Provides a formal framework for prompt injection attacks and defenses, useful for SoK-style abstraction."
-    },
-    {
-      "id": "injecagent-2024",
-      "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
-      "venue": "ACL Findings",
-      "year": 2024,
-      "paper_type": "Benchmark",
-      "category": "Context / Data Attacks",
-      "web_agent_relevance": 4,
-      "status": "tracked",
-      "url": "https://aclanthology.org/2024.findings-acl.624/",
-      "topic_tags": ["indirect prompt injection", "tool-integrated agents", "benchmark", "data exfiltration"],
-      "summary": "A major benchmark for indirect prompt injection in tool-integrated agents, including direct harm and private-data exfiltration."
-    },
-    {
-      "id": "webinject-2025",
-      "title": "WebInject: Prompt Injection Attack to Web Agents",
-      "venue": "EMNLP",
-      "year": 2025,
-      "paper_type": "Attack",
-      "category": "Observation / Environment Attacks",
-      "web_agent_relevance": 5,
-      "status": "tracked",
-      "url": "https://aclanthology.org/2025.emnlp-main.104/",
-      "topic_tags": ["web agent", "visual prompt injection", "MLLM", "adversarial perturbation"],
-      "summary": "A core Web Agent Security paper focused on visual-layer prompt injection against MLLM-based web agents."
     },
     {
       "id": "task-shield-2025",
@@ -68,8 +70,49 @@
       "web_agent_relevance": 4,
       "status": "tracked",
       "url": "https://aclanthology.org/2025.acl-long.1435/",
-      "topic_tags": ["defense", "task alignment", "indirect prompt injection", "runtime checking"],
+      "topic_tags": [
+        "defense",
+        "task alignment",
+        "indirect prompt injection",
+        "runtime checking"
+      ],
       "summary": "Represents intent and task-alignment defenses that check whether instructions or actions serve the original user task."
+    },
+    {
+      "id": "webinject-2025",
+      "title": "WebInject: Prompt Injection Attack to Web Agents",
+      "venue": "EMNLP",
+      "year": 2025,
+      "paper_type": "Attack",
+      "category": "Observation / Environment Attacks",
+      "web_agent_relevance": 5,
+      "status": "tracked",
+      "url": "https://aclanthology.org/2025.emnlp-main.104/",
+      "topic_tags": [
+        "web agent",
+        "visual prompt injection",
+        "MLLM",
+        "adversarial perturbation"
+      ],
+      "summary": "A core Web Agent Security paper focused on visual-layer prompt injection against MLLM-based web agents."
+    },
+    {
+      "id": "autonomous-web-navigation-ipi-2025",
+      "title": "The Dangers of Indirect Prompt Injection Attacks on LLM-based Autonomous Web Navigation Agents",
+      "venue": "EMNLP System Demonstrations",
+      "year": 2025,
+      "paper_type": "Attack / Demo",
+      "category": "Observation / Environment Attacks",
+      "web_agent_relevance": 4,
+      "status": "candidate",
+      "url": "",
+      "topic_tags": [
+        "web navigation",
+        "indirect prompt injection",
+        "BrowserGym",
+        "credential exfiltration"
+      ],
+      "summary": "Demonstrates indirect prompt injection in BrowserGym-style web navigation agents."
     },
     {
       "id": "melon-2025",
@@ -81,7 +124,12 @@
       "web_agent_relevance": 4,
       "status": "tracked",
       "url": "https://proceedings.mlr.press/v267/zhu25z.html",
-      "topic_tags": ["defense", "masked re-execution", "indirect prompt injection", "causal runtime defense"],
+      "topic_tags": [
+        "defense",
+        "masked re-execution",
+        "indirect prompt injection",
+        "causal runtime defense"
+      ],
       "summary": "Introduces masked re-execution as a behavioral or causal runtime defense against indirect prompt injection."
     },
     {
@@ -94,87 +142,49 @@
       "web_agent_relevance": 3,
       "status": "candidate",
       "url": "",
-      "topic_tags": ["deception", "honey tokens", "traps", "malicious agents"],
+      "topic_tags": [
+        "deception",
+        "honey tokens",
+        "traps",
+        "malicious agents"
+      ],
       "summary": "Useful for deception, honey tokens, and traps against malicious autonomous LLM agents."
     },
     {
-      "id": "autonomous-web-navigation-ipi-2025",
-      "title": "The Dangers of Indirect Prompt Injection Attacks on LLM-based Autonomous Web Navigation Agents",
-      "venue": "EMNLP System Demonstrations",
-      "year": 2025,
-      "paper_type": "Attack / Demo",
-      "category": "Observation / Environment Attacks",
-      "web_agent_relevance": 4,
-      "status": "candidate",
-      "url": "",
-      "topic_tags": ["web navigation", "indirect prompt injection", "BrowserGym", "credential exfiltration"],
-      "summary": "Demonstrates indirect prompt injection in BrowserGym-style web navigation agents."
-    },
-    {
-      "id": "toolhijacker-2026",
-      "title": "Prompt Injection Attack to Tool Selection in LLM Agents",
-      "short_name": "ToolHijacker",
-      "venue": "NDSS",
+      "id": "deceptive-web-interfaces-2026",
+      "title": "Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces",
+      "venue": "ACL",
       "year": 2026,
-      "paper_type": "Attack",
-      "category": "Tool / Action Attacks",
-      "web_agent_relevance": 4,
-      "status": "tracked",
-      "url": "https://www.ndss-symposium.org/ndss-paper/prompt-injection-attack-to-tool-selection-in-llm-agents/",
-      "topic_tags": ["tool selection", "tool retrieval", "prompt injection", "agent action"],
-      "summary": "Moves the attack surface from web content to tool descriptions, tool retrieval, and tool selection."
-    },
-    {
-      "id": "obliinjection-2026",
-      "title": "ObliInjection: Order-Oblivious Prompt Injection Attack to LLM Agents with Multi-source Data",
-      "venue": "NDSS",
-      "year": 2026,
-      "paper_type": "Attack",
-      "category": "Context / Data Attacks",
-      "web_agent_relevance": 4,
-      "status": "tracked",
-      "url": "",
-      "topic_tags": ["multi-source data", "indirect prompt injection", "context ordering", "agent observation"],
-      "summary": "Models multi-source observations where attackers control only part of the context and do not know final ordering."
-    },
-    {
-      "id": "muzzle-2026",
-      "title": "MUZZLE: Adaptive Agentic Red-Teaming of Web Agents Against Indirect Prompt Injection Attacks",
-      "venue": "USENIX Security",
-      "year": 2026,
-      "paper_type": "Web Attack / Red Teaming",
+      "paper_type": "Benchmark",
       "category": "Observation / Environment Attacks",
       "web_agent_relevance": 5,
       "status": "tracked",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/syros",
-      "topic_tags": ["web agent", "red teaming", "adaptive attack", "indirect prompt injection"],
-      "summary": "A focused Web Agent Security paper on adaptive red-teaming from agent trajectories and feedback."
+      "url": "https://aclanthology.org/2026.acl-long.1009/",
+      "topic_tags": [
+        "web agent",
+        "deceptive interface",
+        "e-commerce",
+        "benchmark"
+      ],
+      "summary": "Shows that web-agent security includes interface-level manipulation, not only explicit prompt injection."
     },
     {
-      "id": "attriguard-2026",
-      "title": "AttriGuard: Defeating Indirect Prompt Injection in LLM Agents via Causal Attribution of Tool Invocations",
-      "venue": "USENIX Security",
+      "id": "jarvis-or-ultron-2026",
+      "title": "JARVIS or Ultron? A Survey on the Safety and Security Threats of Computer-Using Agents",
+      "venue": "ACL",
       "year": 2026,
-      "paper_type": "Defense",
-      "category": "Defenses",
-      "web_agent_relevance": 4,
-      "status": "tracked",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/he-yu",
-      "topic_tags": ["defense", "causal attribution", "tool invocation", "indirect prompt injection"],
-      "summary": "Studies whether tool invocations are causally driven by user intent or untrusted observations."
-    },
-    {
-      "id": "retrieval-barrier-2026",
-      "title": "Overcoming the Retrieval Barrier: Indirect Prompt Injection in the Wild for LLM Systems",
-      "venue": "USENIX Security",
-      "year": 2026,
-      "paper_type": "Attack",
-      "category": "Context / Data Attacks",
-      "web_agent_relevance": 4,
-      "status": "tracked",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/chang-hongyan",
-      "topic_tags": ["retrieval", "attack delivery", "indirect prompt injection", "real-world exploit"],
-      "summary": "Highlights attack delivery and reachability: malicious content must be retrieved before it can compromise an agent."
+      "paper_type": "Survey",
+      "category": "Survey / Related Work",
+      "web_agent_relevance": 3,
+      "status": "candidate",
+      "url": "",
+      "topic_tags": [
+        "survey",
+        "computer-using agents",
+        "web agents",
+        "safety"
+      ],
+      "summary": "Important neighboring survey scope covering web, desktop, and mobile computer-using agents."
     },
     {
       "id": "costbomb-2026",
@@ -187,21 +197,13 @@
       "web_agent_relevance": 5,
       "status": "tracked",
       "url": "https://aclanthology.org/2026.acl-long.1775/",
-      "topic_tags": ["web agent", "availability", "resource exhaustion", "computational cost attack"],
+      "topic_tags": [
+        "web agent",
+        "availability",
+        "resource exhaustion",
+        "computational cost attack"
+      ],
       "summary": "Expands Web Agent Security beyond goal hijacking into availability and resource-consumption attacks."
-    },
-    {
-      "id": "deceptive-web-interfaces-2026",
-      "title": "Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces",
-      "venue": "ACL",
-      "year": 2026,
-      "paper_type": "Benchmark",
-      "category": "Observation / Environment Attacks",
-      "web_agent_relevance": 5,
-      "status": "tracked",
-      "url": "https://aclanthology.org/2026.acl-long.1009/",
-      "topic_tags": ["web agent", "deceptive interface", "e-commerce", "benchmark"],
-      "summary": "Shows that web-agent security includes interface-level manipulation, not only explicit prompt injection."
     },
     {
       "id": "securewebarena-2026",
@@ -213,8 +215,53 @@
       "web_agent_relevance": 5,
       "status": "tracked",
       "url": "https://aclanthology.org/2026.findings-acl.582/",
-      "topic_tags": ["web agent", "benchmark", "LVLM", "adversarial trajectories"],
+      "topic_tags": [
+        "web agent",
+        "benchmark",
+        "LVLM",
+        "adversarial trajectories"
+      ],
       "summary": "A holistic benchmark with realistic web environments, adversarial trajectories, and multiple attack vectors."
+    },
+    {
+      "id": "evaluating-indirect-prompt-injection-defenses-in-tool-using-2026",
+      "title": "Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication",
+      "venue": "Computers",
+      "year": 2026,
+      "paper_type": "Unknown",
+      "category": "Needs Review",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "https://doi.org/10.3390/computers15090570",
+      "topic_tags": [
+        "attack",
+        "availability",
+        "benchmark",
+        "defense",
+        "indirect prompt injection",
+        "prompt injection",
+        "security"
+      ],
+      "summary": "Large language model (LLM) agents that retrieve external content and use tools are vulnerable to indirect prompt injection, in which untrusted content contains instructions intended to influence agent behavior. We evaluated four defenses and an undefended control across GPT-5.4, GPT-5.4-mini, and Claude Sonnet 4.6 on the AgentDojo banking benchmark (Tool Filter was evaluated only for the OpenAI models), reporting attack success rate (ASR), benign utility, utility under attack, operational measures, and two independent benchmark replications. Raw undefended ASR was 0/288 for GPT-5.4, 11/288 for GPT-5.4-mini, and 1/288 for Claude Sonnet 4.6; these cross-model differences require cautious inter"
+    },
+    {
+      "id": "ares-securing-agents-for-computer-use-through-endpoint-2026",
+      "title": "ARES: Securing Agents for Computer Use Through Endpoint Resource Mediation and Behavioral Guardrails",
+      "venue": "Electronics",
+      "year": 2026,
+      "paper_type": "Unknown",
+      "category": "Needs Review",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "https://doi.org/10.3390/electronics15174007",
+      "topic_tags": [
+        "attack",
+        "authorization",
+        "indirect prompt injection",
+        "prompt injection",
+        "security"
+      ],
+      "summary": "Large language model (LLM)-based agents are evolving into agents for computer use (ACUs) that read files, invoke applications, communicate over networks, and operate graphical interfaces, moving the effective security boundary from model inputs and outputs to autonomous actions that alter endpoint state. Conventional identity and access controls remain applicable and necessary, but they are authorized based on identity, resource, and network policy rather than on the semantic scope of the active task or the provenance of the instruction that triggered an action. This paper presents ARES (Agent Resource Enforcement and Security), an action-centric framework that inserts enforceable authorizat"
     },
     {
       "id": "agentbreaker-2026",
@@ -226,8 +273,86 @@
       "web_agent_relevance": 5,
       "status": "tracked",
       "url": "",
-      "topic_tags": ["web agent", "context-aware injection", "agent architecture", "software testing"],
+      "topic_tags": [
+        "web agent",
+        "context-aware injection",
+        "agent architecture",
+        "software testing"
+      ],
       "summary": "Shifts analysis from a single vulnerable LLM toward modern web-agent architecture vulnerabilities."
+    },
+    {
+      "id": "obliinjection-2026",
+      "title": "ObliInjection: Order-Oblivious Prompt Injection Attack to LLM Agents with Multi-source Data",
+      "venue": "NDSS",
+      "year": 2026,
+      "paper_type": "Attack",
+      "category": "Context / Data Attacks",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "",
+      "topic_tags": [
+        "multi-source data",
+        "indirect prompt injection",
+        "context ordering",
+        "agent observation"
+      ],
+      "summary": "Models multi-source observations where attackers control only part of the context and do not know final ordering."
+    },
+    {
+      "id": "toolhijacker-2026",
+      "title": "Prompt Injection Attack to Tool Selection in LLM Agents",
+      "short_name": "ToolHijacker",
+      "venue": "NDSS",
+      "year": 2026,
+      "paper_type": "Attack",
+      "category": "Tool / Action Attacks",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "https://www.ndss-symposium.org/ndss-paper/prompt-injection-attack-to-tool-selection-in-llm-agents/",
+      "topic_tags": [
+        "tool selection",
+        "tool retrieval",
+        "prompt injection",
+        "agent action"
+      ],
+      "summary": "Moves the attack surface from web content to tool descriptions, tool retrieval, and tool selection."
+    },
+    {
+      "id": "attriguard-2026",
+      "title": "AttriGuard: Defeating Indirect Prompt Injection in LLM Agents via Causal Attribution of Tool Invocations",
+      "venue": "USENIX Security",
+      "year": 2026,
+      "paper_type": "Defense",
+      "category": "Defenses",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/he-yu",
+      "topic_tags": [
+        "defense",
+        "causal attribution",
+        "tool invocation",
+        "indirect prompt injection"
+      ],
+      "summary": "Studies whether tool invocations are causally driven by user intent or untrusted observations."
+    },
+    {
+      "id": "muzzle-2026",
+      "title": "MUZZLE: Adaptive Agentic Red-Teaming of Web Agents Against Indirect Prompt Injection Attacks",
+      "venue": "USENIX Security",
+      "year": 2026,
+      "paper_type": "Web Attack / Red Teaming",
+      "category": "Observation / Environment Attacks",
+      "web_agent_relevance": 5,
+      "status": "tracked",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/syros",
+      "topic_tags": [
+        "web agent",
+        "red teaming",
+        "adaptive attack",
+        "indirect prompt injection"
+      ],
+      "summary": "A focused Web Agent Security paper on adaptive red-teaming from agent trajectories and feedback."
     },
     {
       "id": "network-level-leakage-2026",
@@ -239,21 +364,106 @@
       "web_agent_relevance": 4,
       "status": "tracked",
       "url": "",
-      "topic_tags": ["privacy", "network metadata", "side channel", "research agents"],
+      "topic_tags": [
+        "privacy",
+        "network metadata",
+        "side channel",
+        "research agents"
+      ],
       "summary": "Broadens the corpus beyond prompt injection into network metadata leakage and privacy side channels."
     },
     {
-      "id": "jarvis-or-ultron-2026",
-      "title": "JARVIS or Ultron? A Survey on the Safety and Security Threats of Computer-Using Agents",
-      "venue": "ACL",
+      "id": "retrieval-barrier-2026",
+      "title": "Overcoming the Retrieval Barrier: Indirect Prompt Injection in the Wild for LLM Systems",
+      "venue": "USENIX Security",
       "year": 2026,
-      "paper_type": "Survey",
-      "category": "Survey / Related Work",
+      "paper_type": "Attack",
+      "category": "Context / Data Attacks",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/chang-hongyan",
+      "topic_tags": [
+        "retrieval",
+        "attack delivery",
+        "indirect prompt injection",
+        "real-world exploit"
+      ],
+      "summary": "Highlights attack delivery and reachability: malicious content must be retrieved before it can compromise an agent."
+    },
+    {
+      "id": "sir-self-improving-red-teaming-for-compute-use-2026",
+      "title": "SIR: Self-improving Red-teaming for Compute Use Agents",
+      "venue": "arXiv",
+      "year": 2026,
+      "paper_type": "Unknown",
+      "category": "Needs Review",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "http://arxiv.org/abs/2608.30207v1",
+      "topic_tags": [
+        "attack",
+        "indirect prompt injection",
+        "prompt injection",
+        "red teaming",
+        "safety"
+      ],
+      "summary": "Computer use agents (CUAs) are vision-language models that perceive a screen and act on a real operating system through mouse, keyboard, and terminal, and they are increasingly deployed to automate everyday digital tasks. Because they can be exposed to untrusted content while operating, they are vulnerable to indirect prompt injection (IPI), in which an adversary plants instructions in content the agent will read and redirects it toward actions that violate the user's intent. Existing CUA safety benchmarks evaluate fixed injections written by hand, which may underestimate the risk posed by an adaptive adversary. We present SIR, a black box IPI attack that (i) composes stealthy injections fro"
+    },
+    {
+      "id": "the-framing-gap-indirect-prompt-injection-exfiltration-defeats-2026",
+      "title": "The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents",
+      "venue": "arXiv",
+      "year": 2026,
+      "paper_type": "Unknown",
+      "category": "Needs Review",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "http://arxiv.org/abs/2608.27092v1",
+      "topic_tags": [
+        "attack",
+        "defense",
+        "indirect prompt injection",
+        "llm agent",
+        "prompt injection"
+      ],
+      "summary": "A tool-using LLM agent that reads attacker-controlled web content while holding a secret faces indirect prompt injection: the content may make it exfiltrate the secret. In a safe synthetic lab (canary secret, mock tools, matched clean-vs-poisoned metric) we report the framing gap: across six models, ten overt injection classes are refused (gpt-4o 0%), but reframing the identical leak as a mandatory integrity signature, config field, or look-alike \"trusted\" host drives gpt-4o 0% to 100%. The attack is cheap, and its cost is three-level: paraphrasing a known mechanism is trivial (96% at 3 wordings), swapping the field inside a known-effective template is also cheap (up to 60%), while authoring"
+    },
+    {
+      "id": "webmcp-phalanx-enforcing-and-characterizing-trust-boundaries-for-2026",
+      "title": "WebMCP-Phalanx: Enforcing and Characterizing Trust Boundaries for Browser-Integrated LLM Agents",
+      "venue": "arXiv",
+      "year": 2026,
+      "paper_type": "Unknown",
+      "category": "Needs Review",
+      "web_agent_relevance": 4,
+      "status": "tracked",
+      "url": "http://arxiv.org/abs/2608.24017v1",
+      "topic_tags": [
+        "attack",
+        "prompt injection",
+        "security",
+        "tool invocation",
+        "tool use"
+      ],
+      "summary": "The emerging W3C WebMCP proposal enables LLM agents to invoke tools exposed by web pages. In multi-party web environments, however, integrating agent execution into a browser security model centered on the Same-Origin Policy (SOP) leaves insufficient provenance and lifecycle guarantees for agent-accessible tools, creating three risks: subject-attribution spoofing, uncontrolled tool lifecycles, and semantic prompt injection. We propose WebMCP-Phalanx, a dual-layer agent runtime architecture. Its first layer provides a browser-native trust anchor that binds each tool to its registering principal through cryptographically protected capability credentials and propagates provenance labels through"
+    },
+    {
+      "id": "shifting-from-injection-to-interaction-rethinking-web-security-2026",
+      "title": "Shifting from Injection to Interaction: Rethinking Web Security in the Age of LLMs and Beyond",
+      "venue": "arXiv (Cornell University)",
+      "year": 2026,
+      "paper_type": "Unknown",
+      "category": "Needs Review",
       "web_agent_relevance": 3,
-      "status": "candidate",
-      "url": "",
-      "topic_tags": ["survey", "computer-using agents", "web agents", "safety"],
-      "summary": "Important neighboring survey scope covering web, desktop, and mobile computer-using agents."
+      "status": "tracked",
+      "url": "https://doi.org/10.48550/arxiv.2609.03999",
+      "topic_tags": [
+        "attack",
+        "autonomous agent",
+        "prompt injection",
+        "security"
+      ],
+      "summary": "Large language models (LLMs) are becoming integral to web applications and browser agents, transforming online interactions while introducing new attack vectors and reshaping longstanding web vulnerabilities. Classical threats such as cross-site scripting (XSS) can be amplified through LLM-mediated interactions, while LLM-specific vulnerabilities can propagate across web applications, introducing attacks such as prompt injection. Securing modern web systems therefore requires understanding interactions between traditional and LLM-specific threats across the system lifecycle. Unlike prior surveys treating web and LLM security separately, this survey provides a unified analysis of how LLMs amp"
     }
   ]
 }

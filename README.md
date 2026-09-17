@@ -2,9 +2,9 @@
 
 A curated and dynamically generated paper repository for Web Agent Security, covering prompt injection, tool security, deceptive interfaces, privacy, availability, benchmarks, and defenses.
 
-> Generated from `data/papers.json`. Last corpus review: 2026-09-03.
+> Generated from `data/papers.json`. Last corpus review: 2026-09-16.
 
-Corpus size: **19 papers** · latest year: **2026**.
+Corpus size: **25 papers** · latest year: **2026**.
 
 ## Papers
 
@@ -22,6 +22,8 @@ Corpus size: **19 papers** · latest year: **2026**.
 | JARVIS or Ultron? A Survey on the Safety and Security Threats of Computer-Using Agents | ACL 2026 | Survey | ★★★☆☆ | Survey / Related Work | `survey`, `computer-using agents`, `web agents`, `safety` |
 | [CostBomb](https://aclanthology.org/2026.acl-long.1775/) | ACL 2026 | Attack | ★★★★★ | Resource / Availability Attacks | `web agent`, `availability`, `resource exhaustion`, `computational cost attack` |
 | [SecureWebArena: A Holistic Security Evaluation Benchmark for LVLM-based Web Agents](https://aclanthology.org/2026.findings-acl.582/) | ACL Findings 2026 | Benchmark | ★★★★★ | Security Evaluation | `web agent`, `benchmark`, `LVLM`, `adversarial trajectories` |
+| [Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication](https://doi.org/10.3390/computers15090570) | Computers 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `availability`, `benchmark`, `defense` |
+| [ARES: Securing Agents for Computer Use Through Endpoint Resource Mediation and Behavioral Guardrails](https://doi.org/10.3390/electronics15174007) | Electronics 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `authorization`, `indirect prompt injection`, `prompt injection` |
 | AgentBreaker: Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents | ISSTA 2026 | Web Agent Attack | ★★★★★ | Observation / Environment Attacks | `web agent`, `context-aware injection`, `agent architecture`, `software testing` |
 | ObliInjection: Order-Oblivious Prompt Injection Attack to LLM Agents with Multi-source Data | NDSS 2026 | Attack | ★★★★☆ | Context / Data Attacks | `multi-source data`, `indirect prompt injection`, `context ordering`, `agent observation` |
 | [ToolHijacker](https://www.ndss-symposium.org/ndss-paper/prompt-injection-attack-to-tool-selection-in-llm-agents/) | NDSS 2026 | Attack | ★★★★☆ | Tool / Action Attacks | `tool selection`, `tool retrieval`, `prompt injection`, `agent action` |
@@ -29,6 +31,10 @@ Corpus size: **19 papers** · latest year: **2026**.
 | [MUZZLE: Adaptive Agentic Red-Teaming of Web Agents Against Indirect Prompt Injection Attacks](https://www.usenix.org/conference/usenixsecurity26/presentation/syros) | USENIX Security 2026 | Web Attack / Red Teaming | ★★★★★ | Observation / Environment Attacks | `web agent`, `red teaming`, `adaptive attack`, `indirect prompt injection` |
 | Network-Level Prompt and Trait Leakage in Local Research Agents | USENIX Security 2026 | Privacy | ★★★★☆ | Privacy / Side Channels | `privacy`, `network metadata`, `side channel`, `research agents` |
 | [Overcoming the Retrieval Barrier: Indirect Prompt Injection in the Wild for LLM Systems](https://www.usenix.org/conference/usenixsecurity26/presentation/chang-hongyan) | USENIX Security 2026 | Attack | ★★★★☆ | Context / Data Attacks | `retrieval`, `attack delivery`, `indirect prompt injection`, `real-world exploit` |
+| [SIR: Self-improving Red-teaming for Compute Use Agents](http://arxiv.org/abs/2608.30207v1) | arXiv 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `indirect prompt injection`, `prompt injection`, `red teaming` |
+| [The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents](http://arxiv.org/abs/2608.27092v1) | arXiv 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `defense`, `indirect prompt injection`, `llm agent` |
+| [WebMCP-Phalanx: Enforcing and Characterizing Trust Boundaries for Browser-Integrated LLM Agents](http://arxiv.org/abs/2608.24017v1) | arXiv 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `prompt injection`, `security`, `tool invocation` |
+| [Shifting from Injection to Interaction: Rethinking Web Security in the Age of LLMs and Beyond](https://doi.org/10.48550/arxiv.2609.03999) | arXiv (Cornell University) 2026 | Unknown | ★★★☆☆ | Needs Review | `attack`, `autonomous agent`, `prompt injection`, `security` |
 
 ## Taxonomy View
 
@@ -47,6 +53,15 @@ Corpus size: **19 papers** · latest year: **2026**.
 - [MELON: Provable Defense Against Indirect Prompt Injection Attacks in AI Agents](https://proceedings.mlr.press/v267/zhu25z.html) (ICML 2025)
 - [The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents](https://aclanthology.org/2025.acl-long.1435/) (ACL 2025)
 - [AttriGuard: Defeating Indirect Prompt Injection in LLM Agents via Causal Attribution of Tool Invocations](https://www.usenix.org/conference/usenixsecurity26/presentation/he-yu) (USENIX Security 2026)
+
+### Needs Review
+
+- [ARES: Securing Agents for Computer Use Through Endpoint Resource Mediation and Behavioral Guardrails](https://doi.org/10.3390/electronics15174007) (Electronics 2026)
+- [Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication](https://doi.org/10.3390/computers15090570) (Computers 2026)
+- [SIR: Self-improving Red-teaming for Compute Use Agents](http://arxiv.org/abs/2608.30207v1) (arXiv 2026)
+- [Shifting from Injection to Interaction: Rethinking Web Security in the Age of LLMs and Beyond](https://doi.org/10.48550/arxiv.2609.03999) (arXiv (Cornell University) 2026)
+- [The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents](http://arxiv.org/abs/2608.27092v1) (arXiv 2026)
+- [WebMCP-Phalanx: Enforcing and Characterizing Trust Boundaries for Browser-Integrated LLM Agents](http://arxiv.org/abs/2608.24017v1) (arXiv 2026)
 
 ### Observation / Environment Attacks
 
