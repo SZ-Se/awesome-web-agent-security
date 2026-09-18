@@ -1,0 +1,85 @@
+name: Promote Reviewed Papers
+
+on:
+  pull_request:
+    paths:
+      - "data/candidates/*.json"
+  push:
+    branches:
+      - main
+    paths:
+      - "data/candidates/*.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: promote-reviewed-papers-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  review:
+    name: Validate candidate decisions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Find changed candidate files
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            base_sha="$PR_BASE_SHA"
+          else
+            base_sha="$PUSH_BEFORE_SHA"
+          fi
+
+          git diff --name-only --diff-filter=AM "$base_sha" HEAD -- \
+            'data/candidates/*.json' > "$RUNNER_TEMP/candidate-files.txt"
+
+          if [[ ! -s "$RUNNER_TEMP/candidate-files.txt" ]]; then
+            echo "No added or modified candidate files found."
+            exit 1
+          fi
+
+          echo "Candidate files:"
+          sed 's/^/- /' "$RUNNER_TEMP/candidate-files.txt"
+
+      - name: Require completed human review
+        run: |
+          mapfile -t candidate_files < "$RUNNER_TEMP/candidate-files.txt"
+          python3 scripts/validate_candidate_decisions.py "${candidate_files[@]}"
+
+      - name: Promote accepted papers
+        if: github.event_name != 'pull_request'
+        run: |
+          mapfile -t candidate_files < "$RUNNER_TEMP/candidate-files.txt"
+          python3 scripts/promote_candidates.py "${candidate_files[@]}"
+          python3 scripts/generate_readme.py
+          python3 scripts/validate_data.py
+          git diff --check
+
+      - name: Commit updated corpus and README
+        if: github.event_name != 'pull_request'
+        run: |
+          if git diff --quiet -- data/papers.json README.md; then
+            echo "No new accepted papers to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/papers.json README.md
+          git commit -m "Promote reviewed paper candidates"
+          git push origin HEAD:main

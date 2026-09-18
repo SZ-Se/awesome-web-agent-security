@@ -64,7 +64,7 @@ def to_paper(candidate: dict[str, Any], existing_ids: set[str]) -> dict[str, Any
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("candidate_file", type=Path)
+    parser.add_argument("candidate_files", type=Path, nargs="+")
     parser.add_argument("--papers", type=Path, default=PAPERS_PATH)
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
@@ -73,24 +73,25 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     papers_data = load_json(args.papers)
-    candidates_data = load_json(args.candidate_file)
     existing_ids = {paper["id"] for paper in papers_data.get("papers", [])}
     existing_titles = {paper["title"].strip().lower() for paper in papers_data.get("papers", [])}
 
     accepted = []
-    for candidate in candidates_data.get("candidates", []):
-        if candidate.get("decision") != "accept":
-            continue
-        if candidate.get("duplicate_of"):
-            print(f"Skipping duplicate candidate: {candidate['title']}")
-            continue
-        if candidate["title"].strip().lower() in existing_titles:
-            print(f"Skipping existing title: {candidate['title']}")
-            continue
-        paper = to_paper(candidate, existing_ids)
-        accepted.append(paper)
-        existing_ids.add(paper["id"])
-        existing_titles.add(paper["title"].strip().lower())
+    for candidate_file in args.candidate_files:
+        candidates_data = load_json(candidate_file)
+        for candidate in candidates_data.get("candidates", []):
+            if candidate.get("decision") != "accept":
+                continue
+            if candidate.get("duplicate_of"):
+                print(f"Skipping duplicate candidate: {candidate['title']}")
+                continue
+            if candidate["title"].strip().lower() in existing_titles:
+                print(f"Skipping existing title: {candidate['title']}")
+                continue
+            paper = to_paper(candidate, existing_ids)
+            accepted.append(paper)
+            existing_ids.add(paper["id"])
+            existing_titles.add(paper["title"].strip().lower())
 
     if not accepted:
         print("No accepted candidates to promote.")

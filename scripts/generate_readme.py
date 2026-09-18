@@ -88,7 +88,7 @@ def render(data: dict) -> str:
             "",
             "## Weekly Discovery",
             "",
-            "Weekly discovery is configured in `data/discovery_config.json` and implemented by `scripts/discover_papers.py`. The bot writes candidate papers to `data/candidates/` for human review; it does not edit `data/papers.json` directly.",
+            "Weekly discovery writes a dated candidate file under `data/candidates/` and opens a review PR. After every candidate is marked `accept` or `reject` and the PR is merged, accepted papers are promoted to `data/papers.json` and this README is regenerated automatically.",
             "",
             "See `docs/STRUCTURE.md` and `docs/TAXONOMY.md` for the repository design.",
             "",

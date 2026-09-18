@@ -4,10 +4,10 @@ The repository supports weekly discovery of possible new Web Agent Security pape
 
 1. `scripts/discover_papers.py` searches external sources and writes candidate files under `data/candidates/`.
 2. A maintainer reviews candidates and changes `decision` from `pending` to `accept` or `reject`.
-3. `scripts/promote_candidates.py` appends accepted candidates to `data/papers.json`.
-4. `scripts/generate_readme.py` regenerates the public README.
+3. The candidate PR cannot pass validation while any decision is still `pending`.
+4. After the reviewed PR is merged, GitHub Actions appends accepted candidates to `data/papers.json` and regenerates the public README.
 
-The bot never edits `data/papers.json` directly.
+Discovery never edits `data/papers.json` directly. Promotion happens only after human review and merge.
 
 ## Sources
 
@@ -70,17 +70,24 @@ Rejected papers can be marked:
 "decision": "reject"
 ```
 
-Then promote accepted candidates:
+To test promotion locally:
 
 ```bash
-python3 scripts/promote_candidates.py data/candidates/latest.json
+python3 scripts/validate_candidate_decisions.py data/candidates/2026-09-03.json
+python3 scripts/promote_candidates.py data/candidates/2026-09-03.json
 python3 scripts/validate_data.py
 python3 scripts/generate_readme.py
 ```
 
+On GitHub, no local promotion command is required. Commit the review decisions to the candidate PR and merge it after the review check passes.
+
 ## GitHub Actions
 
-`.github/workflows/weekly-discovery.yml` runs every Monday at 02:00 UTC. If candidates are found, it opens a pull request containing `data/candidates/latest.json` for manual review.
+`.github/workflows/weekly-discovery.yml` runs every Monday at 02:00 UTC. If candidates are found, it opens a pull request containing a dated candidate file for manual review.
+
+`.github/workflows/reviewed-candidates.yml` validates review decisions in candidate PRs. When a fully reviewed candidate file reaches `main`, it promotes accepted papers, regenerates `README.md`, validates the corpus, and commits the generated changes.
+
+To prevent a candidate PR with unresolved decisions from being merged, configure the `Validate candidate decisions` check as required in the branch rules for `main`.
 
 If repository or organization settings do not allow GitHub Actions to create pull requests, the workflow still pushes a `paper-discovery/...` branch and writes a manual PR link to the job summary. To enable automatic PR creation, check:
 

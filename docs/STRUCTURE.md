@@ -18,8 +18,10 @@ This repository is designed as a dynamic paper repository for Web Agent Security
 │   ├── discover_papers.py # Finds candidate papers without editing papers.json
 │   ├── generate_readme.py # Regenerates README from data/papers.json
 │   ├── promote_candidates.py
+│   ├── validate_candidate_decisions.py
 │   └── validate_data.py   # Validates required fields and duplicate ids
 └── .github/workflows/
+    ├── reviewed-candidates.yml
     ├── weekly-discovery.yml
     └── update-readme.yml  # GitHub Actions workflow for validation/generation
 ```
@@ -36,6 +38,7 @@ The data file is intentionally JSON rather than YAML so the current automation c
 ## Discovery Model
 
 1. GitHub Actions runs `scripts/discover_papers.py` weekly.
-2. New candidates are written to `data/candidates/latest.json`.
+2. New candidates are written to a dated file under `data/candidates/`.
 3. A pull request is opened for human review.
-4. Accepted candidates are promoted with `scripts/promote_candidates.py`.
+4. Every candidate must be marked `accept` or `reject` before the PR can pass validation.
+5. When the reviewed PR is merged, GitHub Actions promotes accepted candidates and regenerates `README.md`.
