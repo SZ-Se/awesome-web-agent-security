@@ -2,9 +2,9 @@
 
 A curated and dynamically generated paper repository for Web Agent Security, covering prompt injection, tool security, deceptive interfaces, privacy, availability, benchmarks, and defenses.
 
-> Generated from `data/papers.json`. Last corpus review: 2026-09-16.
+> Generated from `data/papers.json`. Last corpus review: 2026-09-18.
 
-Corpus size: **25 papers** · latest year: **2026**.
+Corpus size: **26 papers** · latest year: **2026**.
 
 ## Papers
 
@@ -35,6 +35,7 @@ Corpus size: **25 papers** · latest year: **2026**.
 | [The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents](http://arxiv.org/abs/2608.27092v1) | arXiv 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `defense`, `indirect prompt injection`, `llm agent` |
 | [WebMCP-Phalanx: Enforcing and Characterizing Trust Boundaries for Browser-Integrated LLM Agents](http://arxiv.org/abs/2608.24017v1) | arXiv 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `prompt injection`, `security`, `tool invocation` |
 | [Shifting from Injection to Interaction: Rethinking Web Security in the Age of LLMs and Beyond](https://doi.org/10.48550/arxiv.2609.03999) | arXiv (Cornell University) 2026 | Unknown | ★★★☆☆ | Needs Review | `attack`, `autonomous agent`, `prompt injection`, `security` |
+| [PlanFlip: Attacking Multi-Agent LLM Systems via Planning-Phase Prompt Injection](https://www.semanticscholar.org/paper/36dd2ed29b677eff1f4689a18040d3fae5c4278a) | arXiv.org 2026 | Unknown | ★★★☆☆ | Needs Review | `attack`, `prompt injection`, `security` |
 
 ## Taxonomy View
 
@@ -58,6 +59,7 @@ Corpus size: **25 papers** · latest year: **2026**.
 
 - [ARES: Securing Agents for Computer Use Through Endpoint Resource Mediation and Behavioral Guardrails](https://doi.org/10.3390/electronics15174007) (Electronics 2026)
 - [Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication](https://doi.org/10.3390/computers15090570) (Computers 2026)
+- [PlanFlip: Attacking Multi-Agent LLM Systems via Planning-Phase Prompt Injection](https://www.semanticscholar.org/paper/36dd2ed29b677eff1f4689a18040d3fae5c4278a) (arXiv.org 2026)
 - [SIR: Self-improving Red-teaming for Compute Use Agents](http://arxiv.org/abs/2608.30207v1) (arXiv 2026)
 - [Shifting from Injection to Interaction: Rethinking Web Security in the Age of LLMs and Beyond](https://doi.org/10.48550/arxiv.2609.03999) (arXiv (Cornell University) 2026)
 - [The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents](http://arxiv.org/abs/2608.27092v1) (arXiv 2026)

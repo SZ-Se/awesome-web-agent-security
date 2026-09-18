@@ -3,7 +3,7 @@
     "name": "awesome-web-agent-security",
     "title": "Awesome Web Agent Security",
     "description": "A curated and dynamically generated paper repository for Web Agent Security, covering prompt injection, tool security, deceptive interfaces, privacy, availability, benchmarks, and defenses.",
-    "last_reviewed": "2026-09-16"
+    "last_reviewed": "2026-09-18"
   },
   "papers": [
     {
@@ -464,6 +464,23 @@
         "security"
       ],
       "summary": "Large language models (LLMs) are becoming integral to web applications and browser agents, transforming online interactions while introducing new attack vectors and reshaping longstanding web vulnerabilities. Classical threats such as cross-site scripting (XSS) can be amplified through LLM-mediated interactions, while LLM-specific vulnerabilities can propagate across web applications, introducing attacks such as prompt injection. Securing modern web systems therefore requires understanding interactions between traditional and LLM-specific threats across the system lifecycle. Unlike prior surveys treating web and LLM security separately, this survey provides a unified analysis of how LLMs amp"
+    },
+    {
+      "id": "planflip-attacking-multi-agent-llm-systems-via-planning-2026",
+      "title": "PlanFlip: Attacking Multi-Agent LLM Systems via Planning-Phase Prompt Injection",
+      "venue": "arXiv.org",
+      "year": 2026,
+      "paper_type": "Unknown",
+      "category": "Needs Review",
+      "web_agent_relevance": 3,
+      "status": "tracked",
+      "url": "https://www.semanticscholar.org/paper/36dd2ed29b677eff1f4689a18040d3fae5c4278a",
+      "topic_tags": [
+        "attack",
+        "prompt injection",
+        "security"
+      ],
+      "summary": "Multi-agent LLM systems increasingly rely on a Planner to decompose goals into sub-task sequences that downstream Executor and Critic agents execute and audit. We identify the planning phase as a critical attack surface: a single injection into the Planner's context achieves cascade amplification, corrupting all downstream sub-tasks simultaneously. We introduce PlanFlip, a framework comprising four planning-phase prompt injection attacks -- GoalSubstitution (PF-1), PriorityInversion (PF-2), ContextPollution (PF-3), and RoleConfusion (PF-4) -- each disguised as plausible tool outputs to evade keyword filters. Evaluating nine frontier LLMs across 3,479 episodes, we uncover three findings: (1) "
     }
   ]
 }
