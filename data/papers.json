@@ -3,7 +3,7 @@
     "name": "awesome-web-agent-security",
     "title": "Awesome Web Agent Security",
     "description": "A curated and dynamically generated paper repository for Web Agent Security, covering prompt injection, tool security, deceptive interfaces, privacy, availability, benchmarks, and defenses.",
-    "last_reviewed": "2026-09-18"
+    "last_reviewed": "2026-09-22"
   },
   "papers": [
     {
@@ -222,6 +222,22 @@
         "adversarial trajectories"
       ],
       "summary": "A holistic benchmark with realistic web environments, adversarial trajectories, and multiple attack vectors."
+    },
+    {
+      "id": "a-large-scale-measurement-of-in-page-prompt-2026",
+      "title": "A Large-scale Measurement of In-Page Prompt Injections Against LLM Web Agents",
+      "venue": "CISPA Helmholtz Center",
+      "year": 2026,
+      "paper_type": "Unknown",
+      "category": "Needs Review",
+      "web_agent_relevance": 3,
+      "status": "tracked",
+      "url": "https://doi.org/10.60882/cispa.33929131.v1",
+      "topic_tags": [
+        "indirect prompt injection",
+        "prompt injection"
+      ],
+      "summary": "LLM web agents increasingly rely on web content as input, exposing them to indirect prompt injection embedded in webpages. While prior work has shown such attacks in controlled settings, it remains unclear whether prompt injection is already deployed in the wild and what role it plays in the web ecosystem. In this paper, we conduct the first large-scale empirical study of in-page prompt injection. Analyzing 1.2B URLs across 24.8M hosts, we identify 15.3K validated prompt injections, with a small set of reused templates accounting for the majority of cases. Our analysis reveals a multi-stakeholder phenomenon, with injections serving diverse offensive and defensive objectives, including system"
     },
     {
       "id": "evaluating-indirect-prompt-injection-defenses-in-tool-using-2026",

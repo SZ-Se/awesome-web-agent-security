@@ -2,9 +2,9 @@
 
 A curated and dynamically generated paper repository for Web Agent Security, covering prompt injection, tool security, deceptive interfaces, privacy, availability, benchmarks, and defenses.
 
-> Generated from `data/papers.json`. Last corpus review: 2026-09-18.
+> Generated from `data/papers.json`. Last corpus review: 2026-09-22.
 
-Corpus size: **26 papers** · latest year: **2026**.
+Corpus size: **27 papers** · latest year: **2026**.
 
 ## Papers
 
@@ -22,6 +22,7 @@ Corpus size: **26 papers** · latest year: **2026**.
 | JARVIS or Ultron? A Survey on the Safety and Security Threats of Computer-Using Agents | ACL 2026 | Survey | ★★★☆☆ | Survey / Related Work | `survey`, `computer-using agents`, `web agents`, `safety` |
 | [CostBomb](https://aclanthology.org/2026.acl-long.1775/) | ACL 2026 | Attack | ★★★★★ | Resource / Availability Attacks | `web agent`, `availability`, `resource exhaustion`, `computational cost attack` |
 | [SecureWebArena: A Holistic Security Evaluation Benchmark for LVLM-based Web Agents](https://aclanthology.org/2026.findings-acl.582/) | ACL Findings 2026 | Benchmark | ★★★★★ | Security Evaluation | `web agent`, `benchmark`, `LVLM`, `adversarial trajectories` |
+| [A Large-scale Measurement of In-Page Prompt Injections Against LLM Web Agents](https://doi.org/10.60882/cispa.33929131.v1) | CISPA Helmholtz Center 2026 | Unknown | ★★★☆☆ | Needs Review | `indirect prompt injection`, `prompt injection` |
 | [Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication](https://doi.org/10.3390/computers15090570) | Computers 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `availability`, `benchmark`, `defense` |
 | [ARES: Securing Agents for Computer Use Through Endpoint Resource Mediation and Behavioral Guardrails](https://doi.org/10.3390/electronics15174007) | Electronics 2026 | Unknown | ★★★★☆ | Needs Review | `attack`, `authorization`, `indirect prompt injection`, `prompt injection` |
 | AgentBreaker: Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents | ISSTA 2026 | Web Agent Attack | ★★★★★ | Observation / Environment Attacks | `web agent`, `context-aware injection`, `agent architecture`, `software testing` |
@@ -57,6 +58,7 @@ Corpus size: **26 papers** · latest year: **2026**.
 
 ### Needs Review
 
+- [A Large-scale Measurement of In-Page Prompt Injections Against LLM Web Agents](https://doi.org/10.60882/cispa.33929131.v1) (CISPA Helmholtz Center 2026)
 - [ARES: Securing Agents for Computer Use Through Endpoint Resource Mediation and Behavioral Guardrails](https://doi.org/10.3390/electronics15174007) (Electronics 2026)
 - [Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication](https://doi.org/10.3390/computers15090570) (Computers 2026)
 - [PlanFlip: Attacking Multi-Agent LLM Systems via Planning-Phase Prompt Injection](https://www.semanticscholar.org/paper/36dd2ed29b677eff1f4689a18040d3fae5c4278a) (arXiv.org 2026)
